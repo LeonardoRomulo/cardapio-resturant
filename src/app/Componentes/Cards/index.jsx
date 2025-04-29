@@ -1,12 +1,14 @@
 import estilos from "./Cards.module.css";
 import Image from "next/image";
 
-export default function Cards({titulo, categoria, descricao, preco}){
+export default function Cards({imagem,nome, categoria, descricao, preco}){
     return(
         <div className={estilos.container_cards}>
-            <figure></figure>
+            <figure>
+                <Image src={imagem} alt={nome} />
+            </figure>
             <div>
-                <h3>{titulo}</h3>
+                <h3>{nome}</h3>
                 <small>{categoria}</small>
                 <p>{descricao}</p>
             </div>

@@ -15,7 +15,19 @@ export default function Home() {
     <main className={estilos.main}>
       <Categorias />
       <CampoDeBusca />
-      <Cards />
+      <div className={estilos.container_cards}>
+      {produtos.map((produto, index) => (
+        <Cards
+        key={index}
+        imagem = {produto.imagem}
+        nome = {produto.nome}
+        categoria = {produto.categoria}
+        descricao = {produto.descricao}
+        preco = {produto.preco}
+        />
+      ))}
+
+      </div>
     </main>
   </>
   );
