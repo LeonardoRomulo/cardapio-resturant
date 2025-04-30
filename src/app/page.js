@@ -8,22 +8,52 @@ import Categorias from "@/app/Componentes/Categorias"
 import CampoDeBusca from "./Componentes/CampoDeBusca";
 import Cards from "./Componentes/Cards";
 import Header from "./Componentes/Header";
-import {retornaProdutos, filtrarEntradas } from "./Servico";
+import {retornaProdutos,filtrarCategorias, buscarProdutos } from "./Servico";
 
 export default function Home() {
+  // o state já iniciando com o valor das categorias em entradas
+
 const [listarCategoria, setListarCategoria] = useState(produtos.filter((produto) => produto.categoria === "Entradas"));
+
+//Estado que amarzena o texto digitado
+
+const [textoBusca, setTextoBusca] = useState("");
+
+//Função para buscar os produtos conforme o texto digitado
+
+const handleBuscarProduto = (textoDigitado) => {
+  setTextoBusca(textoDigitado);
+
+  //condicional na qual permite que as buscas inicie apenas após o usuário ter digitado três letras
+
+  if(textoDigitado.length < 3) {
+
+    return;
+  }
+
+const produtosFiltrados = buscarProdutos(textoDigitado);
+setListarCategoria(produtosFiltrados);
+}
+
+//função que realiza a busca dos produtos por categoria 
 
   const handleFiltrarCategorias = (categorias) => {
     const produtosFiltrados = produtos.filter((produto) => produto.categoria === categorias);
-    setListarCategoria(produtosFiltrados)
+    setListarCategoria(produtosFiltrados);
+    setTextoBusca("")
   }
   return (
     <>
      <Header />
 
     <main className={estilos.main}>
-      <Categorias handleFiltrarCategorias={handleFiltrarCategorias} />
-      <CampoDeBusca />
+      {/* passando a função handleFiltrarCategorias por props para a o compnente categorias */}
+      <Categorias handleFiltrarCategorias={handleFiltrarCategorias} /> 
+
+      {/* Passando por props a função handleBuscarProduto e a variável de estado textoBusca para serem utilizadas no campo de busca */}
+      <CampoDeBusca handleBuscarProduto = {handleBuscarProduto}
+      textoBusca={textoBusca}
+      />
       <div className={estilos.container_cards}>
       {listarCategoria.map((produto, id) => (
         <Cards
