@@ -54,6 +54,7 @@ setListarCategoria(produtosFiltrados);
       <CampoDeBusca handleBuscarProduto = {handleBuscarProduto}
       textoBusca={textoBusca}
       />
+      <h2>Cardápio</h2>
       <div className={estilos.container_cards}>
       {listarCategoria.map((produto, id) => (
         <Cards

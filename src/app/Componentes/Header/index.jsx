@@ -7,8 +7,8 @@ export default function Header (){
          <header>
         <Image src={Banner} alt= "banner" />
         <div className={estilos.titulo}>
-          <h1></h1>
-          <p></p>
+          <h1>Resturant</h1>
+          <p>De pratos clássicos a crialões surpreedentes nosso cardápio é um requinte de sabores refinados.</p>
         </div>
       </header>
     )

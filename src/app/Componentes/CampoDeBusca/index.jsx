@@ -8,7 +8,7 @@ export default function CampoDeBusca({handleBuscarProduto, textoBusca}) {
   <Image src={Lupa} alt="lupa"/>
   <input
   type="text"
-  placeholder="Buscar Produtos" 
+  placeholder="Pesquise aqui um dos pratos do nosso cardápio" 
   value={textoBusca}
   onChange = { (event) => handleBuscarProduto(event.target.value)}
   />
