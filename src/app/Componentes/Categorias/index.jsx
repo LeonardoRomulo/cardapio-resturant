@@ -20,7 +20,7 @@ export default function Categorias({handleFiltrarCategorias}) {
       <button className ={`${estilos.btn} ${ categoriaSelecionada === "Entradas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Entradas")}>
         <Image src={Entradas} alt="entradas "/> Entradas
         </button>
-      <button className = {`${estilos.brn} ${categoriaSelecionada === "Massas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Massas")}>
+      <button className = {`${estilos.btn} ${categoriaSelecionada === "Massas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Massas")}>
         <Image src={Massas} alt="massas "/> Massas
       </button>
       <button className = {`${estilos.btn} ${ categoriaSelecionada === "Carnes" ? estilos.selecionado : ""}`} onClick={() => handleClick("Carnes")}>
