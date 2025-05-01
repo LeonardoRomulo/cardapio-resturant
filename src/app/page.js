@@ -60,7 +60,6 @@ export default function Home() {
         />
         <h2>Cardápio</h2>
         <div className={estilos.container_cards}>
-          <div className={estilos.card}>
             {listarCategoria.map((produto, id) => (
               <Cards
                 key={produto.id}
@@ -68,11 +67,10 @@ export default function Home() {
                 nome={produto.nome}
                 categoria={produto.categoria}
                 descricao={produto.descricao}
-                preco={produto.preco}
+                preco={produto.preco.toFixed(2).replace('.', ',')}
               />
             ))}
           </div>
-        </div>
       </main>
     </>
   );

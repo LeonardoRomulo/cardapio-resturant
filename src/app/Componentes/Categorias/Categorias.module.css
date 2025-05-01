@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .btn {
     padding: 10px 0;
@@ -26,4 +27,10 @@
 
 .selecionado {
     background-color: #daa520;
+}
+
+@media (max-width: 425px){
+    .categorias {
+        justify-content: space-evenly;
+    }
 }

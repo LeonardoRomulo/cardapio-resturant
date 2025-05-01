@@ -25,17 +25,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 40px;
-}
-.card {
-    flex: 1 1clear
-     600px;
-    /* max-width: 300px; */
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
 }

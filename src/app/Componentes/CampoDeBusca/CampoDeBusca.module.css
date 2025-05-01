@@ -36,3 +36,13 @@
 .input::placeholder {
     font-size: 14px;
 }
+
+@media (max-width: 425px){
+    .section_busca {
+        max-width: 100%;
+    }
+
+    .input::placeholder {
+        font-size: 13px;
+    }
+}
