@@ -6,8 +6,8 @@ export default function Header (){
     return(
          <header className={estilos.header}>
         <div className={estilos.titulo}>
-          <h1>Resturant</h1>
-          <p>De pratos clássicos a crialões surpreedentes nosso cardápio é um requinte de sabores refinados.</p>
+          <h1>Restaurant</h1>
+          <p>De pratos clássicos a crialões surpreendentes nosso cardápio é um requinte de sabores refinados.</p>
         </div>
       </header>
     )
