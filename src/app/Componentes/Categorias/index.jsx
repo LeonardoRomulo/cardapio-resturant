@@ -1,3 +1,4 @@
+import { useState } from "react";
 import estilos from "./Categorias.module.css";
 import Image from "next/image";
 import Entradas from "../../../../public/entrada.png";
@@ -8,24 +9,30 @@ import Saladas from "../../../../public/salada.png";
 import Sobremesas from "../../../../public/sobremesa.png";
 
 export default function Categorias({handleFiltrarCategorias}) {
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Entradas");
+  const handleClick = (categoria) => {
+    setCategoriaSelecionada(categoria);
+    handleFiltrarCategorias(categoria);
+  }
+
   return (
     <section className={estilos.categorias}>
-      <button onClick={() => handleFiltrarCategorias("Entradas")}>
+      <button className ={`${estilos.btn} ${ categoriaSelecionada === "Entradas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Entradas")}>
         <Image src={Entradas} alt="entradas "/> Entradas
         </button>
-      <button onClick={() => handleFiltrarCategorias("Massas")}>
+      <button className = {`${estilos.brn} ${categoriaSelecionada === "Massas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Massas")}>
         <Image src={Massas} alt="massas "/> Massas
       </button>
-      <button onClick={() => handleFiltrarCategorias("Carnes")}>
+      <button className = {`${estilos.btn} ${ categoriaSelecionada === "Carnes" ? estilos.selecionado : ""}`} onClick={() => handleClick("Carnes")}>
         <Image src={Carnes} alt="carnes "/> Carnes
       </button>
-      <button onClick={() => handleFiltrarCategorias("Bebidas")}>
+      <button className = {`${estilos.btn} ${ categoriaSelecionada === "Bebidas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Bebidas")}>
         <Image src={Bebidas} alt="bebidas "/> Bebidas
       </button>
-      <button onClick={() => handleFiltrarCategorias("Saladas")}>
+      <button className = {`${estilos.btn} ${ categoriaSelecionada === "Saladas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Saladas")}>
         <Image src={Saladas} alt="saladas" />Saladas
       </button>
-      <button onClick={() => handleFiltrarCategorias("Sobremesas")}>
+      <button className = {`${estilos.btn} ${ categoriaSelecionada === "Sobremesas" ? estilos.selecionado : ""}`} onClick={() => handleClick("Sobremesas")}>
         <Image src={Sobremesas} alt="sobremeas "/> Sobremesas
       </button>
     </section>

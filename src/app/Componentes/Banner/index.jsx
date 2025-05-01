@@ -1,4 +1,4 @@
-import estilos from "./Header.module.css";
+import estilos from "./Banner.module.css";
 import Image from "next/image";
 import Banner from "../../../../public/banner.png";
 

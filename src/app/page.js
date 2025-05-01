@@ -7,7 +7,7 @@ import Banner from "../../public/banner.png";
 import Categorias from "@/app/Componentes/Categorias"
 import CampoDeBusca from "./Componentes/CampoDeBusca";
 import Cards from "./Componentes/Cards";
-import Header from "./Componentes/Header";
+import Header from "./Componentes/Banner";
 import {retornaProdutos,filtrarCategorias, buscarProdutos } from "./Servico";
 
 export default function Home() {
